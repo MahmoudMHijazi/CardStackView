@@ -412,43 +412,47 @@ public class CardStackLayoutManager
         float currentScale = 1.0f - index * (1.0f - setting.scaleInterval);
         float nextScale = 1.0f - nextIndex * (1.0f - setting.scaleInterval);
         float targetScale = currentScale + (nextScale - currentScale) * state.getRatio();
-        switch (setting.stackFrom) {
-            case None:
-                view.setScaleX(targetScale);
-                view.setScaleY(targetScale);
-                break;
-            case Top:
-                view.setScaleX(targetScale);
-                // TODO Should handle ScaleY
-                break;
-            case TopAndLeft:
-                view.setScaleX(targetScale);
-                // TODO Should handle ScaleY
-                break;
-            case TopAndRight:
-                view.setScaleX(targetScale);
-                // TODO Should handle ScaleY
-                break;
-            case Bottom:
-                view.setScaleX(targetScale);
-                // TODO Should handle ScaleY
-                break;
-            case BottomAndLeft:
-                view.setScaleX(targetScale);
-                // TODO Should handle ScaleY
-                break;
-            case BottomAndRight:
-                view.setScaleX(targetScale);
-                // TODO Should handle ScaleY
-                break;
-            case Left:
-                // TODO Should handle ScaleX
-                view.setScaleY(targetScale);
-                break;
-            case Right:
-                // TODO Should handle ScaleX
-                view.setScaleY(targetScale);
-                break;
+        try {
+            switch (setting.stackFrom) {
+                case None:
+                    view.setScaleX(targetScale);
+                    view.setScaleY(targetScale);
+                    break;
+                case Top:
+                    view.setScaleX(targetScale);
+                    // TODO Should handle ScaleY
+                    break;
+                case TopAndLeft:
+                    view.setScaleX(targetScale);
+                    // TODO Should handle ScaleY
+                    break;
+                case TopAndRight:
+                    view.setScaleX(targetScale);
+                    // TODO Should handle ScaleY
+                    break;
+                case Bottom:
+                    view.setScaleX(targetScale);
+                    // TODO Should handle ScaleY
+                    break;
+                case BottomAndLeft:
+                    view.setScaleX(targetScale);
+                    // TODO Should handle ScaleY
+                    break;
+                case BottomAndRight:
+                    view.setScaleX(targetScale);
+                    // TODO Should handle ScaleY
+                    break;
+                case Left:
+                    // TODO Should handle ScaleX
+                    view.setScaleY(targetScale);
+                    break;
+                case Right:
+                    // TODO Should handle ScaleX
+                    view.setScaleY(targetScale);
+                    break;
+            }
+        } catch (Exception e) {
+
         }
     }
 
